@@ -1,5 +1,5 @@
 {
-    "name": "comsave/common",
+    "name": "dennisbold/common",
     "type": "library",
     "description": "Common library for the PhpForce Salesforce libraries",
     "keywords": [  "salesforce", "crm", "soap", "force.com", "web services" ],
@@ -9,10 +9,14 @@
             "name": "David de Boer",
             "email": "david@ddeboer.nl",
             "homepage": "http://ddeboer.nl"
+        },
+        {
+            "name": "Dennis Bold",
+            "email": "dennis@dennisbold.com"
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": "^7.4",
         "symfony/event-dispatcher": "^3.4|^4.3"
     },
     "autoload": {
