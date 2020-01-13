@@ -3,7 +3,7 @@ namespace Phpforce\Common;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Component\EventDispatcher\GenericEvent as Event;
 
 /**
  * Can be extended by classes that dispatch events using the event dispatcher
@@ -14,12 +14,12 @@ abstract class AbstractHasDispatcher
     /**
      * @var EventDispatcherInterface
      */
-    protected EventDispatcherInterface $eventDispatcher;
+    protected $eventDispatcher;
 
     /**
      * Set event dispatcher
      *
-     * @param EventDispatcherInterface $eventDispatcher
+     * @param $eventDispatcher
      */
     public function setEventDispatcher(EventDispatcherInterface $eventDispatcher): EventDispatcherInterface
     {
@@ -53,7 +53,7 @@ abstract class AbstractHasDispatcher
      */
     protected function dispatch($name, Event $event): Event
     {
-        return $this->getEventDispatcher()->dispatch($name, $event);
+        return $this->getEventDispatcher()->dispatch($event, $name);
     }
 }
 
